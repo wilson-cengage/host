@@ -5,24 +5,26 @@ import Component1HeaderFromSource from 'component1/client/components/Header';
 import { Header as Component2HeaderFromBundle } from 'component2';
 import Component2HeaderFromSource from 'component2/client/components/Header';
 
+import './style.css';
+
 export default class Host extends React.Component {
 
     render () {
         return (
             <div>
-                <h1>Host Container</h1>
-                <fieldset>
-                    <legend>Component 1</legend>
+                <h1>Host Container (mt4)</h1>
+                <fieldset className="bundle-fieldset">
+                    <legend>From Component Bundle:</legend>
                     <ul>
-                        <li>From Bundle: <Component1HeaderFromBundle/></li>
-                        <li>From Source: <Component1HeaderFromSource/></li>
+                        <li><Component1HeaderFromBundle/></li>
+                        <li><Component2HeaderFromBundle/></li>
                     </ul>
                 </fieldset>
-                <fieldset>
-                    <legend>Component 2</legend>
+                <fieldset className="bundle-fieldset">
+                    <legend>From Component Source:</legend>
                     <ul>
-                        <li>From Bundle: <Component2HeaderFromBundle/></li>
-                        <li>From Source: <Component2HeaderFromSource/></li>
+                        <li><Component1HeaderFromSource/></li>
+                        <li><Component2HeaderFromSource/></li>
                     </ul>
                 </fieldset>
             </div>);
