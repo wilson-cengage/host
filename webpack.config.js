@@ -8,9 +8,7 @@ module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
   context: path.join(__dirname, './client'),
   entry: {
-    index: './index.js',
-    index_dynamic: './index_dynamic.js',
-    exports: './exports.js'
+    index: './index.js'
   },
   output: {
     path: path.join(__dirname, './static'),

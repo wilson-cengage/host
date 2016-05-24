@@ -1,12 +1,11 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import Header from 'components/Header';
+import Host from 'components/Host';
 
 import 'index.html';
-import 'index_dynamic.html';
 
 ReactDOM.render(
-  <Header/>,
+  <Host/>,
   document.getElementById('root')
 );
