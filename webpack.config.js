@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './static'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     libraryTarget: 'umd'
   },
   externals: {

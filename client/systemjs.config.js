@@ -6,6 +6,6 @@ SystemJS.config({
     map: {
         'React': '../node_modules/react/dist/react-with-addons.min.js',
         'ReactDOM': '../node_modules/react-dom/dist/react-dom.min.js',
-        'component2a': '../node_modules/component2a/dist/component2a.js'
+        'component2a': '/static/component2a/component2a.js'
     }
 });
