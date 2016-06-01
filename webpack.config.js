@@ -42,7 +42,7 @@ module.exports = {
         loaders: [
           'babel-loader'
         ]
-      },
+      }
     ],
   },
   resolve: {
