@@ -66,7 +66,7 @@ export default class Host extends React.Component {
                         </li>
                         <li>
                             <button onClick={this.handleComponent3Button('component3Accordion2')}>Show Component 3 - Accordion2</button>
-                            {this.state.component3Accordion2 == null?null:<div>Component 3 Accordion2 (Component Registry): <this.state.component3Accordion package="component3-package2" component="Accordion"/></div>}
+                            {this.state.component3Accordion2 == null?null:<div>Component 3 Accordion2 (Component Registry): <this.state.component3Accordion2 package="component3-package2" component="Accordion"/></div>}
                         </li>
                     </ul>
                 </fieldset>
