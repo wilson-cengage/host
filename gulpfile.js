@@ -9,10 +9,7 @@ gulp.task('prebuild', function(packageName) {
         'components',
         'static'
     ]).then(paths => {
-        // copy component3-package1, component3-package2 to components/ for local components loading
-        gulp.src([`node_modules/component2a/dist/component2a/**`])
-            .pipe(gulp.dest(`static/component2a/`));
-
+        // copy component3-package1, component3-package2 to components/ for local components loading (fake component registry)
         gulp.src([`node_modules/component3-package1/dist/**`])
             .pipe(gulp.dest(`components/component3-package1/`));
 
@@ -31,7 +28,8 @@ gulp.task('postbuild', function(packageName) {
     gulp.src([`client/*adapter.js`]).pipe(gulp.dest(`static`));
 
 
-    gulp.src([`static/${packageName}/**`]).pipe(gulp.dest(`dist`));
+
+//    gulp.src([`static/${packageName}/**`]).pipe(gulp.dest(`dist`));
 
 
 });

@@ -5,6 +5,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = nodeEnv === 'production';
 
 const packageName = process.env.PACKAGE_NAME;
+const jsonpPackageName = packageName.replace( /\W/g , '');
 
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-eval-source-map',
@@ -15,7 +16,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, './static'),
     filename: '[name].js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    jsonpFunction: `jsonpFunction${jsonpPackageName}`,   /* jsonp function must be unique within the entire cengage universe, so that webpack chunk loaders for each package don't collide */
+    chunkFilename: `${packageName}/${packageName}-[id].js`
   },
   externals: {
     'react': 'React',
@@ -68,6 +71,13 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,     /** deps shared by chunks are extracted into its own async chunk **/
+      async: true
+    }),
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 50        /** Too many chunks means too many async requests before component can be rendered */
     })
   ],
   devServer: {
