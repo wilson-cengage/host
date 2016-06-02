@@ -39,14 +39,14 @@ export default class Host extends React.Component {
     render () {
         return (
             <div>
-                <h1>Host Container (mt4)</h1>
+                <h1>Host (mt4)</h1>
                 <fieldset className="bundle-fieldset">
                     <legend>Component Showcase:</legend>
                     <ul>
                         <li>Component 1 (Static Import): <Component1/></li>
                         <li>
                             <button onClick={this.handleComponent2Button}>Show Component 2</button>
-                            {this.state.component2 == null?null:<div>Component 2 (Progressively Loaded): <this.state.component2/></div>}
+                            {this.state.component2 == null?null:<div>Component 2 (Lazy Import): <this.state.component2/></div>}
                         </li>
                         <li>
                             <button onClick={this.handleComponent3Button('component3Accordion')}>Show Component 3 - Accordion</button>
