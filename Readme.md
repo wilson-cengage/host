@@ -16,17 +16,18 @@ Make sure you have the latest node before using Webpack 2. Some depenencies my f
 $ npm install
 ```
 
-## Build
+## Dev Server
+
+```
+$ npm start
+```
+Open browser http://localhost:3000/client/index.html
+
+
+## Production Build
 
 ```
 $ npm run build
-```
-
-## Running Static Build
-
-```
-$ python -m SimpleHTTPServer
-$ open browser to http://localhost:8000/static/index.html
 ```
 
 # License

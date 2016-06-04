@@ -5,7 +5,7 @@ node_modules
 _nogit
 
 # local server
-/static
+/build
 /components
 
 # IntelliJ

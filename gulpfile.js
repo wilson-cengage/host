@@ -7,7 +7,7 @@ gulp.task('prebuild', function(packageName) {
     del([
         'dist',
         'components',
-        'static'
+        'build'
     ]).then(paths => {
         // component-registry localhost setup
         gulp.src([`node_modules/component-registry/client/__adapters/**`])
@@ -27,13 +27,5 @@ gulp.task('postbuild', function(packageName) {
 
     console.log(`gulp postbuild packageName: ${packageName}`);
 
-
-    // copy react adapters over
-    gulp.src([`client/*adapter.js`]).pipe(gulp.dest(`static`));
-
-
-
-//    gulp.src([`static/${packageName}/**`]).pipe(gulp.dest(`dist`));
-
-
+    gulp.src([`build/${packageName}/**`]).pipe(gulp.dest(`dist`));
 });

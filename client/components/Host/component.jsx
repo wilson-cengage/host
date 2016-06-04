@@ -1,5 +1,5 @@
 import React from 'react';
-import Component1 from 'component1/client/components/WorkflowWidget';
+import Component1 from 'component1/client/components/ToolbarWidget';
 import Component3 from 'component3-loader/client/components/Loader';
 
 import './style.css';

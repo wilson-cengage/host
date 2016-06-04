@@ -1,11 +1,12 @@
 {
   "name": "host",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "description": "Component Host - React, Webpack 2",
   "main": "dist/host.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "gulp prebuild --packageName $npm_package_name",
     "start": "./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000",
     "build": "node build.js production $npm_package_name",
     "prebuild": "gulp prebuild --packageName $npm_package_name",
@@ -30,9 +31,9 @@
   },
   "dependencies": {
     "babel-runtime": "^6.6.1",
-    "component1": "git+https://github.com/wilson-cengage/component1.git#0.0.8",
-    "component2": "git+https://github.com/wilson-cengage/component2.git#0.0.11",
-    "component3-loader": "git+https://github.com/wilson-cengage/component3-loader.git#0.0.12",
+    "component1": "git+https://github.com/wilson-cengage/component1.git#0.0.9",
+    "component2": "git+https://github.com/wilson-cengage/component2.git#0.0.12",
+    "component3-loader": "git+https://github.com/wilson-cengage/component3-loader.git#0.0.13",
     "es6-promise": "^3.1.2",
     "react": "^15.0.0-rc.1",
     "react-dom": "^15.0.0-rc.1"
